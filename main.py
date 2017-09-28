@@ -24,9 +24,9 @@ def index():
 def signup():
     template = jinja_env.get_template("index.html")
     username = request.form['username']
-    password = str(request.form['password'])
+    password = request.form['password']
     v_password = request.form['password-verification']
-    email = str(request.form['email'])
+    email = request.form['email']
     error_user = False
     error_pw = False
     error_vpw = False
