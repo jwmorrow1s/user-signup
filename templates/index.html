@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Signup</h2>
+    <form action="/signup" method="POST">
+      <label for="username">Username</label>
+      <input type="text" name="username">{{username}}</input>
+      {% if error_user %}
+      <p class="error">*Please enter a username</p>
+      {%  endif %}
+      <br />
+      <label for="password">Password</label>
+      <input type="password" name="password">{{password}}</input>
+      {% if error_pw %}
+      <p class="error">*Please enter a valid username (3-20 characters)</p>
+      {%  endif %}
+      <br />
+      <label for="password-verification">Verify Password</label>
+      <input type="password" name="password-verification">{{v_password}}</input>
+      {% if error_vpw %}
+      <p class="error">*Password must match above entry</p>
+      {%  endif %}
+      <br />
+      <label for="email">Email (optional)</label>
+      <input type="text" name="email">{{email}}</input>
+      {% if error_email %}
+      <p class="error">*Enter a valid email</p>
+      {%  endif %}
+      <br />
+      <input type="submit"></input>
+    </form>
+{% endblock %}
